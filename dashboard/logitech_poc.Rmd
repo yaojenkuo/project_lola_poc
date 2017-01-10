@@ -15,7 +15,7 @@ library(formattable)
 產品達成率
 =====================================
 
-Row {data-height=300}
+Row
 -------------------------------------
 
 > 數量
@@ -65,7 +65,7 @@ gauge(rate, min = 0, max = 100, symbol = '%', gaugeSectors(
 ))
 ```
 
-Row {data-height=300}
+Row
 -------------------------------------
 
 > 金額
@@ -115,7 +115,7 @@ gauge(rate, min = 0, max = 100, symbol = '%', gaugeSectors(
 ))
 ```
 
-Row {.tabset .tabset-fade data-height=600}
+Row {.tabset .tabset-fade}
 -------------------------------------
 
 > QTD 與目標
@@ -165,7 +165,7 @@ ggplotly(qtd_target_ggplot)
 廠商達成率
 ===================================== 
 
-Row {data-height=300}
+Row
 -------------------------------------
 
 > 數量
@@ -215,7 +215,7 @@ gauge(rate, min = 0, max = 100, symbol = '%', gaugeSectors(
 ))
 ```
 
-Row {data-height=300}
+Row
 -------------------------------------
 
 > 金額
@@ -265,7 +265,7 @@ gauge(rate, min = 0, max = 100, symbol = '%', gaugeSectors(
 ))
 ```
 
-Row {.tabset .tabset-fade data-height=600}
+Row {.tabset .tabset-fade}
 -------------------------------------
 
 > QTD 與目標
@@ -312,7 +312,7 @@ qtd_target_ggplot <- ggplot(qtd_target_df, aes(quarters, values)) + geom_bar(sta
 ggplotly(qtd_target_ggplot)
 ```
 
-格式化清單表格
+細項資訊
 ===================================== 
 
 Row
