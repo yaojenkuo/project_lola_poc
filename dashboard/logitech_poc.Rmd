@@ -1,0 +1,349 @@
+---
+title: "Logitech Dashboard PoC"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(ggplot2)
+library(plotly)
+library(formattable)
+```
+
+產品達成率
+=====================================
+
+Row {data-height=300}
+-------------------------------------
+
+> 數量
+
+### 滑鼠
+    
+```{r}
+rate <- round(runif(1, min = 0.4) * 100)
+gauge(rate, min = 0, max = 100, symbol = '%', gaugeSectors(
+  success = c(90, 100), warning = c(70, 89), danger = c(0, 69)
+))
+```
+
+### 一般鍵盤
+
+```{r}
+rate <- round(runif(1, min = 0.4) * 100)
+gauge(rate, min = 0, max = 100, symbol = '%', gaugeSectors(
+  success = c(90, 100), warning = c(70, 89), danger = c(0, 69)
+))
+```
+
+### 電競鍵盤
+
+```{r}
+rate <- round(runif(1, min = 0.4) * 100)
+gauge(rate, min = 0, max = 100, symbol = '%', gaugeSectors(
+  success = c(90, 100), warning = c(70, 89), danger = c(0, 69)
+))
+```
+
+### 喇叭
+
+```{r}
+rate <- round(runif(1, min = 0.4) * 100)
+gauge(rate, min = 0, max = 100, symbol = '%', gaugeSectors(
+  success = c(90, 100), warning = c(70, 89), danger = c(0, 69)
+))
+```
+
+### 網路攝影機
+
+```{r}
+rate <- round(runif(1, min = 0.4) * 100)
+gauge(rate, min = 0, max = 100, symbol = '%', gaugeSectors(
+  success = c(90, 100), warning = c(70, 89), danger = c(0, 69)
+))
+```
+
+Row {data-height=300}
+-------------------------------------
+
+> 金額
+
+### 滑鼠
+    
+```{r}
+rate <- round(runif(1, min = 0.4) * 100)
+gauge(rate, min = 0, max = 100, symbol = '%', gaugeSectors(
+  success = c(90, 100), warning = c(70, 89), danger = c(0, 69)
+))
+```
+
+### 一般鍵盤
+
+```{r}
+rate <- round(runif(1, min = 0.4) * 100)
+gauge(rate, min = 0, max = 100, symbol = '%', gaugeSectors(
+  success = c(90, 100), warning = c(70, 89), danger = c(0, 69)
+))
+```
+
+### 電競鍵盤
+
+```{r}
+rate <- round(runif(1, min = 0.4) * 100)
+gauge(rate, min = 0, max = 100, symbol = '%', gaugeSectors(
+  success = c(90, 100), warning = c(70, 89), danger = c(0, 69)
+))
+```
+
+### 喇叭
+
+```{r}
+rate <- round(runif(1, min = 0.4) * 100)
+gauge(rate, min = 0, max = 100, symbol = '%', gaugeSectors(
+  success = c(90, 100), warning = c(70, 89), danger = c(0, 69)
+))
+```
+
+### 網路攝影機
+
+```{r}
+rate <- round(runif(1, min = 0.4) * 100)
+gauge(rate, min = 0, max = 100, symbol = '%', gaugeSectors(
+  success = c(90, 100), warning = c(70, 89), danger = c(0, 69)
+))
+```
+
+Row {.tabset .tabset-fade data-height=600}
+-------------------------------------
+
+> QTD 與目標
+
+### 滑鼠
+
+```{r include=FALSE}
+quarters <- c("Q1", "Q2", "Q3", "Q4", "Q1", "Q2", "Q3", "Q4")
+values <- round(runif(8, min = 0.1) * 100)
+types <- c(rep("QTD", times = 4), rep("Target", times = 4))
+qtd_target_df <- data.frame(quarters, values, types)
+```
+
+```{r}
+qtd_target_ggplot <- ggplot(qtd_target_df, aes(quarters, values)) + geom_bar(stat = "identity", position = "dodge", aes(fill = types))
+ggplotly(qtd_target_ggplot)
+```
+
+### 一般鍵盤
+
+```{r}
+qtd_target_ggplot <- ggplot(qtd_target_df, aes(quarters, values)) + geom_bar(stat = "identity", position = "dodge", aes(fill = types))
+ggplotly(qtd_target_ggplot)
+```
+
+### 電競鍵盤
+
+```{r}
+qtd_target_ggplot <- ggplot(qtd_target_df, aes(quarters, values)) + geom_bar(stat = "identity", position = "dodge", aes(fill = types))
+ggplotly(qtd_target_ggplot)
+```
+
+### 喇叭
+
+```{r}
+qtd_target_ggplot <- ggplot(qtd_target_df, aes(quarters, values)) + geom_bar(stat = "identity", position = "dodge", aes(fill = types))
+ggplotly(qtd_target_ggplot)
+```
+
+### 網路攝影機
+
+```{r}
+qtd_target_ggplot <- ggplot(qtd_target_df, aes(quarters, values)) + geom_bar(stat = "identity", position = "dodge", aes(fill = types))
+ggplotly(qtd_target_ggplot)
+```
+
+廠商達成率
+===================================== 
+
+Row {data-height=300}
+-------------------------------------
+
+> 數量
+
+### 燦坤
+    
+```{r}
+rate <- round(runif(1, min = 0.4) * 100)
+gauge(rate, min = 0, max = 100, symbol = '%', gaugeSectors(
+  success = c(90, 100), warning = c(70, 89), danger = c(0, 69)
+))
+```
+
+### 順發
+
+```{r}
+rate <- round(runif(1, min = 0.4) * 100)
+gauge(rate, min = 0, max = 100, symbol = '%', gaugeSectors(
+  success = c(90, 100), warning = c(70, 89), danger = c(0, 69)
+))
+```
+
+### 良興
+
+```{r}
+rate <- round(runif(1, min = 0.4) * 100)
+gauge(rate, min = 0, max = 100, symbol = '%', gaugeSectors(
+  success = c(90, 100), warning = c(70, 89), danger = c(0, 69)
+))
+```
+
+### 展碁
+
+```{r}
+rate <- round(runif(1, min = 0.4) * 100)
+gauge(rate, min = 0, max = 100, symbol = '%', gaugeSectors(
+  success = c(90, 100), warning = c(70, 89), danger = c(0, 69)
+))
+```
+
+### 三井
+
+```{r}
+rate <- round(runif(1, min = 0.4) * 100)
+gauge(rate, min = 0, max = 100, symbol = '%', gaugeSectors(
+  success = c(90, 100), warning = c(70, 89), danger = c(0, 69)
+))
+```
+
+Row {data-height=300}
+-------------------------------------
+
+> 金額
+
+### 燦坤
+    
+```{r}
+rate <- round(runif(1, min = 0.4) * 100)
+gauge(rate, min = 0, max = 100, symbol = '%', gaugeSectors(
+  success = c(90, 100), warning = c(70, 89), danger = c(0, 69)
+))
+```
+
+### 順發
+
+```{r}
+rate <- round(runif(1, min = 0.4) * 100)
+gauge(rate, min = 0, max = 100, symbol = '%', gaugeSectors(
+  success = c(90, 100), warning = c(70, 89), danger = c(0, 69)
+))
+```
+
+### 良興
+
+```{r}
+rate <- round(runif(1, min = 0.4) * 100)
+gauge(rate, min = 0, max = 100, symbol = '%', gaugeSectors(
+  success = c(90, 100), warning = c(70, 89), danger = c(0, 69)
+))
+```
+
+### 展碁
+
+```{r}
+rate <- round(runif(1, min = 0.4) * 100)
+gauge(rate, min = 0, max = 100, symbol = '%', gaugeSectors(
+  success = c(90, 100), warning = c(70, 89), danger = c(0, 69)
+))
+```
+
+### 三井
+
+```{r}
+rate <- round(runif(1, min = 0.4) * 100)
+gauge(rate, min = 0, max = 100, symbol = '%', gaugeSectors(
+  success = c(90, 100), warning = c(70, 89), danger = c(0, 69)
+))
+```
+
+Row {.tabset .tabset-fade data-height=600}
+-------------------------------------
+
+> QTD 與目標
+
+### 燦坤
+
+```{r include=FALSE}
+quarters <- c("Q1", "Q2", "Q3", "Q4", "Q1", "Q2", "Q3", "Q4")
+values <- round(runif(8, min = 0.1) * 100)
+types <- c(rep("QTD", times = 4), rep("Target", times = 4))
+qtd_target_df <- data.frame(quarters, values, types)
+```
+
+```{r}
+qtd_target_ggplot <- ggplot(qtd_target_df, aes(quarters, values)) + geom_bar(stat = "identity", position = "dodge", aes(fill = types))
+ggplotly(qtd_target_ggplot)
+```
+
+### 順發
+
+```{r}
+qtd_target_ggplot <- ggplot(qtd_target_df, aes(quarters, values)) + geom_bar(stat = "identity", position = "dodge", aes(fill = types))
+ggplotly(qtd_target_ggplot)
+```
+
+### 良興
+
+```{r}
+qtd_target_ggplot <- ggplot(qtd_target_df, aes(quarters, values)) + geom_bar(stat = "identity", position = "dodge", aes(fill = types))
+ggplotly(qtd_target_ggplot)
+```
+
+### 展碁
+
+```{r}
+qtd_target_ggplot <- ggplot(qtd_target_df, aes(quarters, values)) + geom_bar(stat = "identity", position = "dodge", aes(fill = types))
+ggplotly(qtd_target_ggplot)
+```
+
+### 三井
+
+```{r}
+qtd_target_ggplot <- ggplot(qtd_target_df, aes(quarters, values)) + geom_bar(stat = "identity", position = "dodge", aes(fill = types))
+ggplotly(qtd_target_ggplot)
+```
+
+格式化清單表格
+===================================== 
+
+Row
+-------------------------------------
+
+### 細項資訊
+
+```{r include=FALSE}
+df <- data.frame(
+  pn = 1:10,
+  model = c("Extreme 3D Pro", "G100s", "G100s Combo", "G102", "G105", "G213", "G231", "G240", "G300s", "G302"),
+  color = c("黑色", "白色", "粉色", "藍色", "金色", "紅色", "紫色", "橘色", "黑色", "白色"),
+  vendor = c("順發", "順發", "順發", "燦坤", "燦坤", "燦坤", "燦坤", "三井", "三井", "三井"),
+  inv = c(8.9, 9.5, 9.6, 8.9, 9.1, 9.3, 9.3, 9.9, 8.5, 8.6),
+  so = c(9.1, 9.1, 9.2, 9.1, 8.9, 8.5, 9.2, 9.3, 9.1, 8.8),
+  inv_days = c(9, 9.3, 9.4, 9, 9, 8.9, 9.25, 9.6, 8.8, 8.7),
+  refilled = c(TRUE, FALSE, TRUE, FALSE, TRUE, TRUE, TRUE, FALSE, FALSE, FALSE),
+  stringsAsFactors = FALSE)
+```
+
+```{r}
+formattable(df, list(
+  #name = color_tile("white", "orange"),
+  #inv = formatter("span", style = x ~ ifelse(x == "A", 
+    #style(color = "green", font.weight = "bold"), NA)),
+  area(col = c(so, inv)) ~ normalize_bar("pink", 0.2),
+  inv_days = formatter("span",
+    style = x ~ style(color = ifelse(rank(-x) <= 3, "green", "gray")),
+    x ~ sprintf("%.2f (rank: %02d)", x, rank(-x))),
+  refilled = formatter("span",
+    style = x ~ style(color = ifelse(x, "green", "red")),
+    x ~ icontext(ifelse(x, "ok", "remove"), ifelse(x, "Yes", "No")))
+))
+```
